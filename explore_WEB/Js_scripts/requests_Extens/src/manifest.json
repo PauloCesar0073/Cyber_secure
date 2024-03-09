@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Requests_",
+  "version": "1.0",
+  "description": "REALIZAR REQUISIÇÕES.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+}],
+  "browser_action": {
+    "default_icon": "./imgs/ic.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "./imgs/ic.png"
+  }
+
+}
+

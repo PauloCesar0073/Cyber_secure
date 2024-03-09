@@ -1,0 +1,97 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <title>Realizar Requisição</title>
+  <link rel="shortcut icon" href="imgs/ic.png" type="image/x-icon">
+
+
+  <style>
+    /* Estilos para o painel de resposta */
+    body{
+
+background-color: bisque;
+
+
+    }
+    #painelResposta {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }    /* Estilo para o conteúdo da resposta */
+    #conteudoResposta {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }    /* Estilo para o link de download */
+    #linkDownload {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="reload-btn" style="position: fixed;">::Recarregar Extensão::</button><br><br>
+    <div id="painel_">
+        <label for="hostInput">Host de Destino:</label>
+        <input type="text" id="hostInput" placeholder="https://exemplo.com" required><br><br>
+    
+        <label for="tipoReqInput">Tipo de Requisição:</label>
+        <select id="tipoReqInput">
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+          <!-- Adicione outras opções de métodos de requisição, se necessário -->
+        </select><br><br>
+    
+        <label for="contentTypeInput">Content-Type:</label>
+        <select id="contentTypeInput">
+          <option value="application/json">application/json</option>
+          <option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>
+          <option value="text/html">text/html</option>
+          <option value="image/jpeg">image/jpeg</option>
+          <option value="*/*">(*/*)Todos os tipos</option>
+          
+          <!-- Adicione outras opções de Content-Type conforme necessário -->
+        </select><br><br>
+        <label for="dadosReqInput">Dados da Requisição:</label><br>
+        <textarea id="dadosReqInput" rows="4" cols="50" placeholder="Insira os dados da requisição(contents por exemplo um PUT ou um POST deve ter um conteúdo.) caso contrário deixe em branco!"></textarea><br><br>
+    
+        <button id="reqbtn">Realizar requisição</button><br><br>
+    
+        <div id="resposta" style="display: none;">
+          <div id="painelResposta">
+            <h3>Resposta:</h3>
+            <div>
+              <h4>Código de Estado:</h4>
+              <pre id="codigoEstado"></pre>
+            </div>
+            <div>
+              <h4>Headers Recebidos:</h4>
+              <pre id="cabecalhosRecebidos"></pre>
+              <button id="btnCopiarHeaders" style="display: none;">Copiar Headers</button>
+              <hr style="display: none; border: 1px solid #000000; margin: 2px 0;width: 100%;" id="line">
+
+            </div>
+            <div>
+              <h4>Conteúdo da Resposta:</h4>
+              <pre id="conteudoResposta"></pre>
+              <button id="btnCopiarResposta" style="display: none;">Copiar Resposta</button>
+              <a href="#" download id="linkDownload">Baixar Arquivo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  <script src="cont.js">
+  
+  </script>
+
+  <footer>
+
+todos direitos reserrvados a <a style="text-decoration: none;color: cadetblue;" target="_blank" href="https://github.com/PauloCesar0073">PauloCesar00073</a>
+<hr style="border: 1px solid #000000; margin: 2px 0;width: 100%;">
+  </footer>
+</body>
+</html>
